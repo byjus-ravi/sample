@@ -1,0 +1,13 @@
+<div class="jumbotron">
+<h1>Article</h1>
+<% if user_signed_in? && @article.user == current_user %>
+<%= link_to 'Update', edit_article_path(@article),:class=>"btn btn-primary"%>
+<%= link_to 'Delete', article_path(@article), data: { turbo_method: :delete },:class=>"btn btn-danger" %>
+<%end%>
+<%= link_to 'Go Back', articles_path,:class=>"btn btn-primary"%>
+</div>
+<div class="jumbotron">
+<h1>title:<%=@article.title%></h1>
+<h1>description:<%=@article.description%></h1>
+<h1>created by:<%=@article.user.email if @article.user %></h1>
+</div>
