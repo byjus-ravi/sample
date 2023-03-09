@@ -31,7 +31,9 @@ class ArticlesController<ApplicationController
     end
 
     def update
-      if @article.user == current_user && @article.update(article_params)
+      if @article.user == current_user
+        @article.update(article_params)
+        @article.save
         redirect_to @article
       else
         render 'edit'
