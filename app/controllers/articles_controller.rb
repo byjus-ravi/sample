@@ -34,6 +34,7 @@ class ArticlesController<ApplicationController
       if @article.user == current_user
         @article.update(article_params)
         @article.save
+        puts "hello"
         redirect_to @article
       else
         render 'edit'
