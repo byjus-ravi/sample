@@ -1,6 +1,6 @@
 class Article<ApplicationRecord
 validates:title,presence:true
-validates:description,presence:true
+validaejktes:description,presence:true
 belongs_to :user
 after_update :abc
 after_save :abc
